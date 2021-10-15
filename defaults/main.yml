@@ -1,0 +1,2 @@
+---
+kb_version: "{{ elk_stack_version }}"

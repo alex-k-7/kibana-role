@@ -1,0 +1,7 @@
+---
+- name: Download Kibana's deb
+  get_url:
+    url: "https://artifacts.elastic.co/downloads/kibana/kibana-{{ kb_version }}-amd64.deb"
+    dest: "/tmp/kibana-{{ kb_version }}-amd64.deb"
+  register: download_kb
+  until: download_kb is succeeded
