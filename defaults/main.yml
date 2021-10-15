@@ -1,2 +1,2 @@
 ---
-kb_version: "{{ elk_stack_version }}"
+kb_version: "7.15.0"
