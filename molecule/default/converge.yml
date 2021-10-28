@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include Kibana role"
+      include_role:
+        name: "kibana_role"

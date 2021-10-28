@@ -2,6 +2,12 @@
 - name: Download Kibana's deb
   get_url:
     url: "https://artifacts.elastic.co/downloads/kibana/kibana-{{ kb_version }}-amd64.deb"
-    dest: "/tmp/kibana-{{ kb_version }}-amd64.deb"
+    dest: "files/kibana-{{ kb_version }}-amd64.deb"
+  delegate_to: localhost
   register: download_kb
   until: download_kb is succeeded
+- name: Copy Kibana's deb to managed node
+  copy:
+    src: "files/kibana-{{ kb_version }}-amd64.deb"
+    mode: 0755
+    dest: "/tmp/kibana-{{ kb_version }}-amd64.deb"
